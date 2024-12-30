@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import * as Yup from "yup";
 
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import { useNavigate } from "react-router-dom";
@@ -50,13 +50,7 @@ const LoginForm = () => {
 
           login(userData);
           localStorage.setItem("token", token);
-
-          toast.success("Login Successful!", {
-            autoClose: 3000,
-            closeOnClick: true,
-            draggable: true,
-            toastId: "login-success",
-          });
+          toast.success(response.data?.message || "Login Successful!");
           setTimeout(() => navigate("/"), 1500);
         }
       } catch (error) {
@@ -71,14 +65,6 @@ const LoginForm = () => {
 
   return (
     <>
-      <ToastContainer
-        position="bottom-right"
-        autoClose={3000}
-        closeOnClick
-        draggable
-        pauseOnHover={false}
-        style={{ zIndex: 9999 }}
-      />
       <Card
         elevation={4}
         sx={{

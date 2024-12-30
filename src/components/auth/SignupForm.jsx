@@ -14,7 +14,7 @@ import * as Yup from "yup";
 
 import axiosInstance from "../../config/axiosConfig";
 
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const SignupForm = () => {
@@ -48,7 +48,6 @@ const SignupForm = () => {
 
   return (
     <>
-      <ToastContainer />
       <Card
         elevation={4}
         sx={{
